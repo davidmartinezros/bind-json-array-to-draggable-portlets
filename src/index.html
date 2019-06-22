@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bind Json Array to Draggable Portlets | Angular, Java and Javascript website Projects</title>
+  <base href="/">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="David Martinez Ros">
+  <meta name="keywords" content="Bind, Json, Array, Draggable, Portlets, Barcelona, Catalonia, Spain, Job, Engineer, Engineering, Technology, Angular, Ionic, Java, Unity, Engine, Node.js, Bootstrap, Spring, Programming, JavaScript, C Sharp, C#">
+  <meta name="description" content="Bind Json Array to Draggable Portlets | Author: David Martinez Ros; Location: Barcelona, Catalonia, Spain; Job: Engineer, Engineering; Technology: Angular, Ionic, Java, Unity; Engine: Node.js, Boostrap, Spring; Programming: JavaScript, C Sharp, C#.">
+  <meta name="robots" content="index, follow">
+  <meta name="google" content="nositelinkssearchbox">
+  <link rel="publisher" href="https://plus.google.com/+DavidMartinezRos" title="davidmartinezros.com on Google+"/>
+  <link rel="author" href="https://plus.google.com/108069145499631514979/about" title="David Martinez Ros on Google+"/>
+  <!--script type="text/javascript" src="../../assets/scripts/google_analytics.js"></script-->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+  <script>
+  $( function() {
+    $( ".column" ).sortable({
+      connectWith: ".column",
+      handle: ".portlet-header",
+      cancel: ".portlet-toggle",
+      placeholder: "portlet-placeholder ui-corner-all"
+    });
+ 
+    $( ".portlet" )
+      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+      .find( ".portlet-header" )
+        .addClass( "ui-widget-header ui-corner-all" )
+        .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
+        
+    $( ".portlet-toggle" ).on( "click", function() {
+      var icon = $( this );
+      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
+    });
+  } );
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
