@@ -1,53 +1,9 @@
-<div class="column">
+<div *ngFor="let column of data | async" class="column">
  
-  <div class="portlet">
-    <div class="portlet-header">News</div>
+  <div *ngFor="let portlet of column.portlets" class="portlet">
+    <div class="portlet-header">{{ portlet.header }}</div>
     <div class="portlet-content">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-      <!--iframe src="https://www.youtube.com/embed/QH2-TGUlwu4?autoplay=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-      -->
-    </div>
-  </div>
- 
-  <div class="portlet">
-    <div class="portlet-header">News</div>
-    <div class="portlet-content">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-      <!--iframe src="https://www.youtube.com/embed/QH2-TGUlwu4?autoplay=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-      -->
-    </div>
-  </div>
- 
-</div>
- 
-<div class="column">
- 
-  <div class="portlet">
-    <div class="portlet-header">News</div>
-    <div class="portlet-content">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-      <!--iframe src="https://www.youtube.com/embed/QH2-TGUlwu4?autoplay=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-      -->
-    </div>
-  </div>
- 
-</div>
- 
-<div class="column">
- 
-  <div class="portlet">
-    <div class="portlet-header">News</div>
-    <div class="portlet-content">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-      <!--iframe src="https://www.youtube.com/embed/QH2-TGUlwu4?autoplay=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-      -->
-    </div>
-  </div>
- 
-  <div class="portlet">
-    <div class="portlet-header">News</div>
-    <div class="portlet-content">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+      {{ portlet.content }}
       <!--iframe src="https://www.youtube.com/embed/QH2-TGUlwu4?autoplay=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
       -->
     </div>
