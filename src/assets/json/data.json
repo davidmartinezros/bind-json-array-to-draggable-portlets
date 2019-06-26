@@ -1,30 +1,34 @@
-[
-    {
-        "portlets" : [
-            {
-                "header": "AAA",
-                "content": "BBB"
-            }
-        ]
-    },
-    {
-        "portlets" : [
-            {
-                "header": "AAA",
-                "content": "BBB"
-            },
-            {
-                "header": "AAA",
-                "content": "BBB"
-            }
-        ]
-    },
-    {
-        "portlets" : [
-            {
-                "header": "AAA",
-                "content": "BBB"
-            }
-        ]
-    }
-]
+{
+    "columnsCount": 3,
+    "columns": [
+        {
+            "portlets" : [
+                {
+                    "header": "AAA",
+                    "content": "BBB"
+                }
+            ]
+        },
+        {
+            "portlets" : [
+                {
+                    "header": "AAA",
+                    "content": "BBB"
+                },
+                {
+                    "header": "AAA",
+                    "content": "BBB"
+                }
+            ]
+        },
+        {
+            "portlets" : [
+                {
+                    "header": "AAA",
+                    "content": "BBB"
+                }
+            ]
+        }
+    ]
+    
+}

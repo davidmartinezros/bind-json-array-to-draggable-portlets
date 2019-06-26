@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Column } from '../column';
 import * as $ from 'jquery';
+import { Data } from '../data';
 window["$"] = $;
 window["jQuery"] = $;
 declare var $;
@@ -11,16 +11,11 @@ declare var $;
   templateUrl: './portlets.component.html',
   styleUrls: ['./portlets.component.css']
 })
-export class PortletsComponent implements OnInit, AfterViewInit {
+export class PortletsComponent implements AfterViewInit {
   
-  @Input() data: Observable<Array<Column>>;
+  @Input() data: Observable<Data>;
 
   constructor() {
-    console.log("PortletsComponent.data:" + this.data);
-  }
-
-  ngOnInit() {
-
   }
 
   ngAfterViewInit() {
@@ -30,6 +25,14 @@ export class PortletsComponent implements OnInit, AfterViewInit {
   }
 
   loadJQuery() {
+    this.data.subscribe(val => {
+      let columnsCount = val.columnsCount;
+      if(columnsCount <= 0) {
+        columnsCount = 1;
+      }
+      let width = ((1/columnsCount)*100);
+      $( ".column" ).width(width + "%");
+    });
     $( ".column" ).sortable({
       connectWith: ".column",
       handle: ".portlet-header",

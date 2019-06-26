@@ -1,5 +1,4 @@
-<div *ngFor="let column of data | async" class="column">
- 
+<div *ngFor="let column of (data | async)?.columns" class="column">
   <div *ngFor="let portlet of column.portlets" class="portlet">
     <div class="portlet-header">{{ portlet.header }}</div>
     <div class="portlet-content">
@@ -8,5 +7,5 @@
       -->
     </div>
   </div>
- 
+
 </div>

@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
 import { environment } from 'src/environments/environment';
 import { Column } from '../column';
+import { Data } from '../data';
 
 @Component({
   selector: 'app-load',
@@ -12,7 +13,7 @@ import { Column } from '../column';
 })
 export class LoadComponent implements OnInit {
 
-  data: Observable<Array<Column>>;
+  data: Observable<Data>;
 
   @Output() notify: EventEmitter<any> = new EventEmitter<any>();
 
