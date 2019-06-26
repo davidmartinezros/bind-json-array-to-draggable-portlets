@@ -82,7 +82,7 @@ export class LoadComponent {
     console.log('fi onChange');
     setTimeout(() => {
       this.loadJQuery();
-    }, 0);
+    }, 300);
   }
 
 }
