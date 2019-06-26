@@ -1,0 +1,9 @@
+<div>
+  <ul>
+      <li>Load the file for change the portlets options <input type="file" (change)="onChange($event)"/></li>
+      <li>Example json file <a href="./assets/json/data.json" target="_blank">download here</a></li>
+  </ul>
+</div>
+
+<h3>Portlets</h3>
+<app-portlets [(data)]="data"></app-portlets>
