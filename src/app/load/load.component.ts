@@ -1,9 +1,12 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
 import { environment } from 'src/environments/environment';
-import { Column } from '../column';
 import { Data } from '../data';
+import * as $ from 'jquery';
+window["$"] = $;
+window["jQuery"] = $;
+declare var $;
 
 @Component({
   selector: 'app-load',
@@ -11,7 +14,7 @@ import { Data } from '../data';
   styleUrls: ['./load.component.css'],
   providers: [ReturnJsonArrayService]
 })
-export class LoadComponent implements OnInit {
+export class LoadComponent implements AfterViewInit {
 
   data: Observable<Data>;
 
@@ -23,6 +26,41 @@ export class LoadComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.loadJQuery();
+    }, 100);
+  }
+
+  loadJQuery() {
+    this.data.subscribe(val => {
+      let columnsCount = val.columnsCount;
+      if(columnsCount <= 0) {
+        columnsCount = 1;
+      }
+      let width = ((1/columnsCount)*100);
+      $( ".column" ).width(width + "%");
+    });
+    $( ".column" ).sortable({
+      connectWith: ".column",
+      handle: ".portlet-header",
+      cancel: ".portlet-toggle",
+      placeholder: "portlet-placeholder ui-corner-all"
+    });
+ 
+    $( ".portlet" )
+      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+      .find( ".portlet-header" )
+        .addClass( "ui-widget-header ui-corner-all" )
+        .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
+        
+    $( ".portlet-toggle" ).on( "click", function() {
+      var icon = $( this );
+      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
+    });
   }
 
   loadFile() {
@@ -49,6 +87,9 @@ export class LoadComponent implements OnInit {
     console.log('enviem');
     this.notify.emit(this.data);
     console.log('fi onChange');
+    setTimeout(() => {
+      this.loadJQuery();
+    }, 100);
   }
 
 }
