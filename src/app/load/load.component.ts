@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
 import { environment } from 'src/environments/environment';
@@ -14,7 +14,7 @@ declare var $;
   styleUrls: ['./load.component.css'],
   providers: [ReturnJsonArrayService]
 })
-export class LoadComponent implements AfterViewInit {
+export class LoadComponent {
 
   data: Observable<Data>;
 
@@ -22,16 +22,9 @@ export class LoadComponent implements AfterViewInit {
 
   constructor(private service: ReturnJsonArrayService) {
     this.loadFile();
-  }
-
-  ngOnInit() {
-
-  }
-
-  ngAfterViewInit() {
     setTimeout(() => {
       this.loadJQuery();
-    }, 100);
+    }, 300);
   }
 
   loadJQuery() {
@@ -89,7 +82,7 @@ export class LoadComponent implements AfterViewInit {
     console.log('fi onChange');
     setTimeout(() => {
       this.loadJQuery();
-    }, 100);
+    }, 0);
   }
 
 }
