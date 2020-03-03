@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
 import { environment } from 'src/environments/environment';
@@ -18,13 +18,22 @@ export class LoadPortletsComponent {
 
   data: Observable<Data>;
 
-  @Output() notify: EventEmitter<any> = new EventEmitter<any>();
+  @Input() configFile: String;
+
+  //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private service: ReturnJsonArrayService) {
-    this.loadFile();
-    setTimeout(() => {
-      this.loadJQuery();
-    }, 300);
+    
+  }
+
+  ngOnInit() {
+    console.log(this.configFile);
+    if(this.configFile) {
+      this.loadFile(this.configFile);
+      setTimeout(() => {
+        this.loadJQuery();
+      }, 300);
+    }
   }
 
   loadJQuery() {
@@ -56,11 +65,11 @@ export class LoadPortletsComponent {
     });
   }
 
-  loadFile() {
-    this.data = this.service.getScreen('..' + environment.directory + '/assets/json/data.json');
+  loadFile(configFile) {
+    this.data = this.service.getScreen('..' + environment.directory + configFile);
     this.data.subscribe(val => console.log(val));
   }
-
+/*
   onChange(event) {
     console.log('event:' + event);
     var file: File = event.srcElement.files[0];
@@ -84,5 +93,5 @@ export class LoadPortletsComponent {
       this.loadJQuery();
     }, 300);
   }
-
+*/
 }

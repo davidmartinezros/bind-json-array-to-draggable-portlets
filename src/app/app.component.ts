@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'bind-json-array-to-draggable-portlets';
 
+  configFile = "/assets/json/data.json";
+
 }
