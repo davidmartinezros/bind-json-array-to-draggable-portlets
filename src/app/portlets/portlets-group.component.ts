@@ -3,11 +3,11 @@ import { Observable } from 'rxjs';
 import { Data } from '../data';
 
 @Component({
-  selector: 'app-portlets',
-  templateUrl: './portlets.component.html',
-  styleUrls: ['./portlets.component.css']
+  selector: 'app-portlets-group',
+  templateUrl: './portlets-group.component.html',
+  styleUrls: ['./portlets-group.component.css']
 })
-export class PortletsComponent {
+export class PortletsGroupComponent {
   
   @Input() data: Observable<Data>;
 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PortletsComponent } from './portlets.component';
+import { PortletsGroupComponent } from './portlets-group.component';
 
-describe('Menu1Component', () => {
-  let component: PortletsComponent;
-  let fixture: ComponentFixture<PortletsComponent>;
+describe('PortletsGroupComponent', () => {
+  let component: PortletsGroupComponent;
+  let fixture: ComponentFixture<PortletsGroupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PortletsComponent ]
+      declarations: [ PortletsGroupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PortletsComponent);
+    fixture = TestBed.createComponent(PortletsGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

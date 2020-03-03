@@ -9,12 +9,12 @@ window["jQuery"] = $;
 declare var $;
 
 @Component({
-  selector: 'app-load',
-  templateUrl: './load.component.html',
-  styleUrls: ['./load.component.css'],
+  selector: 'app-load-portlets',
+  templateUrl: './load-portlets.component.html',
+  styleUrls: ['./load-portlets.component.css'],
   providers: [ReturnJsonArrayService]
 })
-export class LoadComponent {
+export class LoadPortletsComponent {
 
   data: Observable<Data>;
 
