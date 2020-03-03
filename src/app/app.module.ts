@@ -11,8 +11,8 @@ import { PortletComponent } from './portlet/portlet.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PortletsGroupComponent,
     PortletComponent,
+    PortletsGroupComponent,
     LoadPortletsComponent
   ],
   imports: [
