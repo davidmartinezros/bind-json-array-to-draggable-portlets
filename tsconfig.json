@@ -18,6 +18,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "app-draggable-portlets-template": [
+        "dist/app-draggable-portlets-template/app-draggable-portlets-template",
+        "dist/app-draggable-portlets-template"
+      ]
+    }
   }
 }

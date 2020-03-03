@@ -1,0 +1,5 @@
+<div *ngFor="let column of (data | async)?.columns" class="column">
+  <div *ngFor="let portlet of column.portlets">
+    <app-portlet [portlet]="portlet"></app-portlet>
+  </div>
+</div>
