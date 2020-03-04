@@ -4,9 +4,9 @@ import { ReturnJsonArrayService } from '../return-json-array.service';
 //import { environment } from 'src/environments/environment';
 import { Data } from '../data';
 import * as $ from 'jquery';
-window["$"] = $;
-window["jQuery"] = $;
-declare var $;
+//window["$"] = $;
+//window["jQuery"] = $;
+declare var $: any;
 
 @Component({
   selector: 'app-load-portlets',

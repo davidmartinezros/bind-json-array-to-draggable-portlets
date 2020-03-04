@@ -21,6 +21,10 @@ import { ReturnJsonArrayService } from './return-json-array.service';
     HttpClientModule
   ],
   providers: [ReturnJsonArrayService],
-  exports: [AppDraggablePortletsTemplateComponent]
+  exports: [
+    AppDraggablePortletsTemplateComponent,
+    PortletComponent,
+    PortletsGroupComponent,
+    LoadPortletsComponent]
 })
 export class AppDraggablePortletsTemplateModule { }
