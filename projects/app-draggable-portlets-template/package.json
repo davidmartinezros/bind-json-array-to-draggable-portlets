@@ -1,6 +1,6 @@
 {
   "name": "app-draggable-portlets-template",
-  "version": "0.0.8",
+  "version": "0.0.21",
   "license": "MIT",
   "description": "An easy implementation of draggable portlets for Angular, where you can load all portlets by a data json file.",
   "author": "David Martínez Ros",
@@ -32,6 +32,14 @@
     "@angular/platform-browser": "^9.0.3",
     "tslib": "^1.10.0",
     "jquery": "3.4.1",
-    "jquery-ui-dist": "1.12.1"
-  }
+    "jquery-ui": "1.12.1",
+    "jquery-ui-dist": "1.12.1",
+    "@types/node": "12.12.29"
+  },
+  "bundledDependencies": [
+    "jquery",
+    "jquery-ui",
+    "jquery-ui-dist",
+    "@types/node"
+  ]
 }

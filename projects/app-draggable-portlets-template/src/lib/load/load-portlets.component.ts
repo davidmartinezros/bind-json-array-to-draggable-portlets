@@ -3,12 +3,23 @@ import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
 //import { environment } from 'src/environments/environment';
 import { Data } from '../data';
+
+//declare var $ :any;
+
+//declare var jQuery: any;
+
 //import * as $ from 'jquery';
-//window["$"] = $;
-//window["jQuery"] = $;
-//declare var $: any;
-declare var jquery:any;
-declare var $ :any;
+
+'use strict';
+
+//import * as $ from 'jquery';
+
+import * as jqueryProxy from 'jquery'
+const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
+
+require('jquery-ui');
+require('jquery-ui/ui/widgets/sortable');
+require('jquery-ui/ui/disable-selection');
 
 @Component({
   selector: 'app-load-portlets',
@@ -43,23 +54,23 @@ export class LoadPortletsComponent {
         columnsCount = 1;
       }
       let width = ((1/columnsCount)*100);
-      $( ".column" ).width(width + "%");
+      jquery( ".column" ).width(width + "%");
     });
-    $( ".column" ).sortable({
+    (<any>jquery( ".column" )).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",
       placeholder: "portlet-placeholder ui-corner-all"
     });
  
-    $( ".portlet" )
+    jquery( ".portlet" )
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
         .addClass( "ui-widget-header ui-corner-all" )
         .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
         
-    $( ".portlet-toggle" ).on( "click", function() {
-      var icon = $( this );
+        jquery( ".portlet-toggle" ).on( "click", function() {
+      var icon = jquery( this );
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
