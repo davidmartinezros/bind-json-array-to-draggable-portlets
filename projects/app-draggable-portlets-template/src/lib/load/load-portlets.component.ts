@@ -3,10 +3,12 @@ import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
 //import { environment } from 'src/environments/environment';
 import { Data } from '../data';
-import * as $ from 'jquery';
+//import * as $ from 'jquery';
 //window["$"] = $;
 //window["jQuery"] = $;
-declare var $: any;
+//declare var $: any;
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-load-portlets',
