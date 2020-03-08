@@ -6,7 +6,7 @@ You can find me at https://davidmartinezros.com or contact in the email davidnez
 
 ## demo plunker using the component
 
-
+https://next.plnkr.co/edit/REhfoeZ3CaoYOneY?open=lib%2Fapp.ts&deferRun=1
 
 # how to use this component
 
