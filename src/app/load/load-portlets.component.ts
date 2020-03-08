@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
 import { environment } from 'src/environments/environment';
@@ -25,7 +25,8 @@ require('jquery-ui/ui/disable-selection');
   selector: 'app-load-portlets',
   templateUrl: './load-portlets.component.html',
   styleUrls: ['./load-portlets.component.css'],
-  providers: [ReturnJsonArrayService]
+  providers: [ReturnJsonArrayService],
+  encapsulation: ViewEncapsulation.None
 })
 export class LoadPortletsComponent {
 
