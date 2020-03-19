@@ -1,8 +1,18 @@
+# DESCRIPTION
+
+The component is an easy representation of a webpage structurate in draggable portlets binding with a json file.
+
+It could be useful for a notice portal or a webpage the need to interchange them content.
+
 ## load bind json array to draggable portlets in an easy way with app-draggable-portlets-template
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and is designed as a basic template combined with [Angular](https://angular.io/).
 
 You can find me at https://davidmartinezros.com or contact in the email davidnezan@gmail.com
+
+## youtube video
+
+https://www.youtube.com/watch?v=UK95WlM-GMc
 
 ## demo plunker using the component
 
