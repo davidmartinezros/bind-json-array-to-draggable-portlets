@@ -9,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppDraggablePortletsTemplateComponent implements OnInit {
 
+  title = 'bind-json-array-to-draggable-portlets';
+
+  configFile = "/assets/json/data.json";
+
   constructor() { }
 
   ngOnInit(): void {

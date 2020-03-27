@@ -50,6 +50,8 @@
     "jquery": "3.4.1",
     "jquery-ui": "1.12.1",
     "jquery-ui-dist": "1.12.1",
+    "rollup-plugin-json": "4.0.0",
+    "rollup-plugin-url": "3.0.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

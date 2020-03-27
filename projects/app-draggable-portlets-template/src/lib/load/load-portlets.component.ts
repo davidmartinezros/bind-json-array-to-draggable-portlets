@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, Input, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
-//import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { Data } from '../data';
 
 //declare var $ :any;
@@ -33,6 +33,8 @@ export class LoadPortletsComponent {
   data: Observable<Data>;
 
   @Input() configFile: String;
+
+  //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private service: ReturnJsonArrayService) {
     
@@ -70,7 +72,7 @@ export class LoadPortletsComponent {
         .addClass( "ui-widget-header ui-corner-all" )
         .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
         
-        jquery( ".portlet-toggle" ).on( "click", function() {
+    jquery( ".portlet-toggle" ).on( "click", function() {
       var icon = jquery( this );
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
@@ -78,8 +80,32 @@ export class LoadPortletsComponent {
   }
 
   loadFile(configFile) {
-    this.data = this.service.getScreen('..' /*+ environment.directory*/ + configFile);
+    this.data = this.service.getScreen(/*'..'*/ /*+ environment.directory + */configFile);
     this.data.subscribe(val => console.log(val));
   }
-  
+/*
+  onChange(event) {
+    console.log('event:' + event);
+    var file: File = event.srcElement.files[0];
+    var url;
+    console.log('file:' + file);
+    console.log('file.name:' + file.name);
+    console.log('file.type:' + file.type);
+    if(file != null) {
+      url = URL.createObjectURL(file);
+    } else {
+      url = '.' + environment.directory + '/assets/json/data.json';
+    }
+    console.log('url:' + url);
+    if(url != null) {
+      this.data = this.service.getScreen(url);
+    }
+    console.log('enviem');
+    this.notify.emit(this.data);
+    console.log('fi onChange');
+    setTimeout(() => {
+      this.loadJQuery();
+    }, 300);
+  }
+*/
 }

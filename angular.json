@@ -148,7 +148,7 @@
       "projectType": "library",
       "root": "projects/app-draggable-portlets-template",
       "sourceRoot": "projects/app-draggable-portlets-template/src",
-      "prefix": "AppDraggablePortlets",
+      "prefix": "DraggablePortletsTemplate",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",

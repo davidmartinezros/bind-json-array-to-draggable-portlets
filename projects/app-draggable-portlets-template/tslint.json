@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "appDraggablePortlets",
+      "draggablePortletsTemplate",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app-draggable-portlets",
+      "draggable-portlets-template",
       "kebab-case"
     ]
   }

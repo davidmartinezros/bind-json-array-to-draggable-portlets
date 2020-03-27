@@ -7,16 +7,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReturnJsonArrayService } from './return-json-array.service';
 
+
+
 @NgModule({
   declarations: [
     AppDraggablePortletsTemplateComponent,
     PortletComponent,
     PortletsGroupComponent,
-    LoadPortletsComponent
-  ],
+    LoadPortletsComponent  ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule 
   ],
   providers: [ReturnJsonArrayService],
   exports: [

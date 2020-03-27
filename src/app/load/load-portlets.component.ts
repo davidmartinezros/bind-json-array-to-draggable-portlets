@@ -80,7 +80,7 @@ export class LoadPortletsComponent {
   }
 
   loadFile(configFile) {
-    this.data = this.service.getScreen('..' + environment.directory + configFile);
+    this.data = this.service.getScreen(/*'..'*/ /*+ environment.directory + */configFile);
     this.data.subscribe(val => console.log(val));
   }
 /*
