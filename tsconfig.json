@@ -22,8 +22,6 @@
     "paths": {
       "app-draggable-portlets-template": [
         "dist/app-draggable-portlets-template/app-draggable-portlets-template",
-        "dist/app-draggable-portlets-template",
-        "dist/app-draggable-portlets-template/app-draggable-portlets-template",
         "dist/app-draggable-portlets-template"
       ]
     }
