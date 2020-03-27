@@ -4,7 +4,7 @@ import * as i0 from "@angular/core";
 var AppDraggablePortletsTemplateService = /** @class */ (function () {
     function AppDraggablePortletsTemplateService() {
     }
-    AppDraggablePortletsTemplateService.ɵprov = i0.ɵɵdefineInjectable({ factory: function AppDraggablePortletsTemplateService_Factory() { return new AppDraggablePortletsTemplateService(); }, token: AppDraggablePortletsTemplateService, providedIn: "root" });
+    AppDraggablePortletsTemplateService.ɵprov = i0.defineInjectable({ factory: function AppDraggablePortletsTemplateService_Factory() { return new AppDraggablePortletsTemplateService(); }, token: AppDraggablePortletsTemplateService, providedIn: "root" });
     AppDraggablePortletsTemplateService = __decorate([
         Injectable({
             providedIn: 'root'

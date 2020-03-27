@@ -1,5 +1,5 @@
 import { __decorate, __metadata } from 'tslib';
-import { ɵɵdefineInjectable, Injectable, Component, Input, ViewEncapsulation, ɵɵinject, NgModule } from '@angular/core';
+import { defineInjectable, Injectable, Component, Input, ViewEncapsulation, inject, NgModule } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
@@ -11,7 +11,7 @@ let AppDraggablePortletsTemplateService = class AppDraggablePortletsTemplateServ
     constructor() {
     }
 };
-AppDraggablePortletsTemplateService.ɵprov = ɵɵdefineInjectable({ factory: function AppDraggablePortletsTemplateService_Factory() { return new AppDraggablePortletsTemplateService(); }, token: AppDraggablePortletsTemplateService, providedIn: "root" });
+AppDraggablePortletsTemplateService.ɵprov = defineInjectable({ factory: function AppDraggablePortletsTemplateService_Factory() { return new AppDraggablePortletsTemplateService(); }, token: AppDraggablePortletsTemplateService, providedIn: "root" });
 AppDraggablePortletsTemplateService = __decorate([
     Injectable({
         providedIn: 'root'
@@ -99,7 +99,7 @@ let ReturnJsonArrayService = class ReturnJsonArrayService {
 ReturnJsonArrayService.ctorParameters = () => [
     { type: HttpClient }
 ];
-ReturnJsonArrayService.ɵprov = ɵɵdefineInjectable({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(ɵɵinject(HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
+ReturnJsonArrayService.ɵprov = defineInjectable({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(inject(HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
 ReturnJsonArrayService = __decorate([
     Injectable({
         providedIn: 'root'

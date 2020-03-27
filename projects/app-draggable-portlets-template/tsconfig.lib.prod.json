@@ -2,5 +2,8 @@
   "extends": "./tsconfig.lib.json",
   "angularCompilerOptions": {
     "enableIvy": false
-  }
+  },
+  "include": [
+    "src/styles.css"
+  ]
 }

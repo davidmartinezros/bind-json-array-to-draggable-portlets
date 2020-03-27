@@ -10632,7 +10632,7 @@
 	var AppDraggablePortletsTemplateService = /** @class */ (function () {
 	    function AppDraggablePortletsTemplateService() {
 	    }
-	    AppDraggablePortletsTemplateService.ɵprov = core["ɵɵdefineInjectable"]({ factory: function AppDraggablePortletsTemplateService_Factory() { return new AppDraggablePortletsTemplateService(); }, token: AppDraggablePortletsTemplateService, providedIn: "root" });
+	    AppDraggablePortletsTemplateService.ɵprov = core["defineInjectable"]({ factory: function AppDraggablePortletsTemplateService_Factory() { return new AppDraggablePortletsTemplateService(); }, token: AppDraggablePortletsTemplateService, providedIn: "root" });
 	    AppDraggablePortletsTemplateService = tslib.__decorate([
 	        core.Injectable({
 	            providedIn: 'root'
@@ -10723,7 +10723,7 @@
 	    ReturnJsonArrayService.ctorParameters = function () { return [
 	        { type: http.HttpClient }
 	    ]; };
-	    ReturnJsonArrayService.ɵprov = core["ɵɵdefineInjectable"]({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(core["ɵɵinject"](http.HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
+	    ReturnJsonArrayService.ɵprov = core["defineInjectable"]({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(core["inject"](http.HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
 	    ReturnJsonArrayService = tslib.__decorate([
 	        core.Injectable({
 	            providedIn: 'root'

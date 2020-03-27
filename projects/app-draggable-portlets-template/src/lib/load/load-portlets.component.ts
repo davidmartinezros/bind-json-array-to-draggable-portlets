@@ -1,7 +1,6 @@
 import { Component, Output, EventEmitter, Input, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
-import { environment } from 'src/environments/environment';
 import { Data } from '../data';
 
 //declare var $ :any;
