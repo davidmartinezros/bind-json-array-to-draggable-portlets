@@ -14,9 +14,9 @@ You can find me at https://davidmartinezros.com or contact in the email davidnez
 
 https://www.youtube.com/watch?v=UK95WlM-GMc
 
-## demo plunker using the component
+## demo using the component
 
-https://plnkr.co/edit/REhfoeZ3CaoYOneY?preview
+https://davidmartinezros.github.io/DraggablePortletsTemplateDemo/
 
 # how to use this component
 
