@@ -10723,7 +10723,7 @@
 	    ReturnJsonArrayService.ctorParameters = function () { return [
 	        { type: http.HttpClient }
 	    ]; };
-	    ReturnJsonArrayService.ɵprov = core["defineInjectable"]({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(core["inject "](http.HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
+	    ReturnJsonArrayService.ɵprov = core["defineInjectable"]({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(core["inject"](http.HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
 	    ReturnJsonArrayService = tslib.__decorate([
 	        core.Injectable({
 	            providedIn: 'root'

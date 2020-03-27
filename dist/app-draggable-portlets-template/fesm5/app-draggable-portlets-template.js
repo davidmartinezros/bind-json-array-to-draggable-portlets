@@ -1,5 +1,5 @@
 import { __decorate, __metadata } from 'tslib';
-import { defineInjectable, Injectable, Component, Input, ViewEncapsulation, inject , NgModule } from '@angular/core';
+import { defineInjectable, Injectable, Component, Input, ViewEncapsulation, inject, NgModule } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
@@ -101,7 +101,7 @@ var ReturnJsonArrayService = /** @class */ (function () {
     ReturnJsonArrayService.ctorParameters = function () { return [
         { type: HttpClient }
     ]; };
-    ReturnJsonArrayService.ɵprov = defineInjectable({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(inject (HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
+    ReturnJsonArrayService.ɵprov = defineInjectable({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(inject(HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
     ReturnJsonArrayService = __decorate([
         Injectable({
             providedIn: 'root'

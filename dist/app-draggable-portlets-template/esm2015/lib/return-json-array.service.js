@@ -31,7 +31,7 @@ let ReturnJsonArrayService = class ReturnJsonArrayService {
 ReturnJsonArrayService.ctorParameters = () => [
     { type: HttpClient }
 ];
-ReturnJsonArrayService.ɵprov = i0.defineInjectable({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(i0.inject (i1.HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
+ReturnJsonArrayService.ɵprov = i0.defineInjectable({ factory: function ReturnJsonArrayService_Factory() { return new ReturnJsonArrayService(i0.inject(i1.HttpClient)); }, token: ReturnJsonArrayService, providedIn: "root" });
 ReturnJsonArrayService = __decorate([
     Injectable({
         providedIn: 'root'
