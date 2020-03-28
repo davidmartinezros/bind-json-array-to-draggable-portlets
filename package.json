@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "An easy implementation of draggable portlets for Angular, where you can load all portlets by a data json file.",
   "author": "David Martinez Ros",
+  "sasslintConfig": "dist/**/*.s+(a|c)ss",
   "repository": {
     "type": "git",
     "url": "https://github.com/davidmartinezros/bind-json-array-to-draggable-portlets"
@@ -75,6 +76,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^9.0.0",
     "protractor": "~5.4.0",
+    "sass-lint": "^1.13.1",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.7.5"
