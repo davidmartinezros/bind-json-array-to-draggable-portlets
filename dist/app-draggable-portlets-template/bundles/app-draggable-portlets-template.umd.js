@@ -10760,14 +10760,6 @@
 	            var width = ((1 / columnsCount) * 100);
 	            jquery(".column").width(width + "%");
 	        });
-	        /*
-	        (<any>$( ".column" )).sortable({
-	          connectWith: ".column",
-	          handle: ".portlet-header",
-	          cancel: ".portlet-toggle",
-	          placeholder: "portlet-placeholder ui-corner-all"
-	        });
-	        */
 	        jquery(".portlet")
 	            .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 	            .find(".portlet-header")
@@ -10777,6 +10769,12 @@
 	            var icon = jquery(this);
 	            icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
 	            icon.closest(".portlet").find(".portlet-content").toggle();
+	        });
+	        jquery(".column").sortable({
+	            connectWith: ".column",
+	            handle: ".portlet-header",
+	            cancel: ".portlet-toggle",
+	            placeholder: "portlet-placeholder ui-corner-all"
 	        });
 	    };
 	    LoadPortletsComponent.prototype.loadFile = function (configFile) {
