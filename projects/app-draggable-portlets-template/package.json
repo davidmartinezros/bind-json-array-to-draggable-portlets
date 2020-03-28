@@ -1,10 +1,9 @@
 {
  "name": "app-draggable-portlets-template",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "license": "MIT",
   "description": "An easy implementation of draggable portlets for Angular, where you can load all portlets by a data json file.",
   "author": "David Martinez Ros",
-  "sasslintConfig": "dist/**/*.s+(a|c)ss",
   "repository": {
     "type": "git",
     "url": "https://github.com/davidmartinezros/bind-json-array-to-draggable-portlets"
@@ -35,7 +34,8 @@
     "jquery": "3.4.1",
     "jquery-ui": "1.12.1",
     "jquery-ui-dist": "1.12.1",
-    "@types/node": "12.12.29"
+    "@types/node": "12.12.29",
+    "sass-lint": "^1.13.1"
   },
   "bundledDependencies": [
     "jquery",

@@ -23,7 +23,7 @@ require('jquery-ui/ui/disable-selection');
 @Component({
   selector: 'app-load-portlets',
   templateUrl: './load-portlets.component.html',
-  styleUrls: ['./load-portlets.component.css'],
+  styleUrls: ['./load-portlets.component.scss'],
   providers: [ReturnJsonArrayService],
   encapsulation: ViewEncapsulation.None
 })

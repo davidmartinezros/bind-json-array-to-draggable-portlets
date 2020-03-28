@@ -1,0 +1,5 @@
+{
+  "name": "bind-json-array-to-draggable-portlets",
+  "version": "1.0.0",
+  "sasslintConfig": "dist/**/*.s+(a|c)ss"
+}

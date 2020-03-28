@@ -4,6 +4,6 @@
     "enableIvy": false
   },
   "include": [
-    "src/styles.css"
+    "src/styles.scss"
   ]
 }

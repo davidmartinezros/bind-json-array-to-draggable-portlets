@@ -12,6 +12,6 @@
   ],
   "include": [
     "src/**/*.d.ts",
-    "src/styles.css"
+    "src/styles.scss"
   ]
 }
