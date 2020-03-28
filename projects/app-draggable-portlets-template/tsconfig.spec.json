@@ -12,7 +12,6 @@
   ],
   "include": [
     "**/*.spec.ts",
-    "**/*.d.ts",
-    "src/styles.scss"
+    "**/*.d.ts"
   ]
 }

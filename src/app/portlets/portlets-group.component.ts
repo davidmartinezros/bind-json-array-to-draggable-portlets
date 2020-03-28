@@ -5,7 +5,7 @@ import { Data } from '../data';
 @Component({
   selector: 'app-portlets-group',
   templateUrl: './portlets-group.component.html',
-  styleUrls: ['./portlets-group.component.scss'],
+  styleUrls: ['./portlets-group.component.scss',],
   encapsulation: ViewEncapsulation.None
 })
 export class PortletsGroupComponent {

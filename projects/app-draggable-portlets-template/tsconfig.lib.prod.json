@@ -3,7 +3,5 @@
   "angularCompilerOptions": {
     "enableIvy": false
   },
-  "include": [
-    "src/styles.scss"
-  ]
+  "include": [ ]
 }
