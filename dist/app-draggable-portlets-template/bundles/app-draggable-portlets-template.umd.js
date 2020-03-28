@@ -10623,12 +10623,6 @@
 	} );
 	});
 
-	var jqueryProxy = /*#__PURE__*/Object.freeze({
-		__proto__: null,
-		'default': jquery,
-		__moduleExports: jquery
-	});
-
 	var AppDraggablePortletsTemplateService = /** @class */ (function () {
 	    function AppDraggablePortletsTemplateService() {
 	    }
@@ -10733,11 +10727,12 @@
 	    return ReturnJsonArrayService;
 	}());
 
-	//declare var $ :any;
-	//declare var jQuery: any;
-	//import * as $ from 'jquery';
+	/*opcio antiga */
+	//'use strict';
+	//import * as jqueryProxy from 'jquery'
+	//const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
+	/* opcio nova */
 	'use strict';
-	var jquery$1 = jquery || jqueryProxy;
 	require('jquery-ui');
 	require('jquery-ui/ui/widgets/sortable');
 	require('jquery-ui/ui/disable-selection');
@@ -10763,27 +10758,29 @@
 	                columnsCount = 1;
 	            }
 	            var width = ((1 / columnsCount) * 100);
-	            jquery$1(".column").width(width + "%");
+	            jquery(".column").width(width + "%");
 	        });
-	        jquery$1(".column").sortable({
-	            connectWith: ".column",
-	            handle: ".portlet-header",
-	            cancel: ".portlet-toggle",
-	            placeholder: "portlet-placeholder ui-corner-all"
+	        /*
+	        (<any>$( ".column" )).sortable({
+	          connectWith: ".column",
+	          handle: ".portlet-header",
+	          cancel: ".portlet-toggle",
+	          placeholder: "portlet-placeholder ui-corner-all"
 	        });
-	        jquery$1(".portlet")
+	        */
+	        jquery(".portlet")
 	            .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 	            .find(".portlet-header")
 	            .addClass("ui-widget-header ui-corner-all")
 	            .prepend("<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-	        jquery$1(".portlet-toggle").on("click", function () {
-	            var icon = jquery$1(this);
+	        jquery(".portlet-toggle").on("click", function () {
+	            var icon = jquery(this);
 	            icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
 	            icon.closest(".portlet").find(".portlet-content").toggle();
 	        });
 	    };
 	    LoadPortletsComponent.prototype.loadFile = function (configFile) {
-	        this.data = this.service.getScreen(/*'..'*/ /*+ environment.directory + */ configFile);
+	        this.data = this.service.getScreen(configFile);
 	        this.data.subscribe(function (val) { return console.log(val); });
 	    };
 	    LoadPortletsComponent.ctorParameters = function () { return [

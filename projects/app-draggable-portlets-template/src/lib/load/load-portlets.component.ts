@@ -1,20 +1,20 @@
-import { Component, Output, EventEmitter, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReturnJsonArrayService } from '../return-json-array.service';
 import { Data } from '../data';
 
-//declare var $ :any;
+/*opcio antiga */
 
-//declare var jQuery: any;
+//'use strict';
 
-//import * as $ from 'jquery';
+//import * as jqueryProxy from 'jquery'
+//const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
+
+/* opcio nova */
 
 'use strict';
 
-//import * as $ from 'jquery';
-
-import * as jqueryProxy from 'jquery'
-const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
+import $ from 'jquery';
 
 require('jquery-ui');
 require('jquery-ui/ui/widgets/sortable');
@@ -56,30 +56,31 @@ export class LoadPortletsComponent {
         columnsCount = 1;
       }
       let width = ((1/columnsCount)*100);
-      jquery( ".column" ).width(width + "%");
+      $( ".column" ).width(width + "%");
     });
-    (<any>jquery( ".column" )).sortable({
+    /*
+    (<any>$( ".column" )).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",
       placeholder: "portlet-placeholder ui-corner-all"
     });
- 
-    jquery( ".portlet" )
+    */
+    $( ".portlet" )
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
         .addClass( "ui-widget-header ui-corner-all" )
         .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
         
-    jquery( ".portlet-toggle" ).on( "click", function() {
-      var icon = jquery( this );
+    $( ".portlet-toggle" ).on( "click", function() {
+      var icon = $( this );
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
   }
 
   loadFile(configFile) {
-    this.data = this.service.getScreen(/*'..'*/ /*+ environment.directory + */configFile);
+    this.data = this.service.getScreen(configFile);
     this.data.subscribe(val => console.log(val));
   }
 /*

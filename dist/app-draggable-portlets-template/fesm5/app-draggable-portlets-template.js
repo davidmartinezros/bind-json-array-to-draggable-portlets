@@ -3,8 +3,7 @@ import { defineInjectable, Injectable, Component, Input, ViewEncapsulation, inje
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import * as jqueryProxy from 'jquery';
-import jqueryProxy__default from 'jquery';
+import $ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 
 var AppDraggablePortletsTemplateService = /** @class */ (function () {
@@ -111,11 +110,12 @@ var ReturnJsonArrayService = /** @class */ (function () {
     return ReturnJsonArrayService;
 }());
 
-//declare var $ :any;
-//declare var jQuery: any;
-//import * as $ from 'jquery';
+/*opcio antiga */
+//'use strict';
+//import * as jqueryProxy from 'jquery'
+//const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
+/* opcio nova */
 'use strict';
-var jquery = jqueryProxy__default || jqueryProxy;
 require('jquery-ui');
 require('jquery-ui/ui/widgets/sortable');
 require('jquery-ui/ui/disable-selection');
@@ -141,27 +141,29 @@ var LoadPortletsComponent = /** @class */ (function () {
                 columnsCount = 1;
             }
             var width = ((1 / columnsCount) * 100);
-            jquery(".column").width(width + "%");
+            $(".column").width(width + "%");
         });
-        jquery(".column").sortable({
-            connectWith: ".column",
-            handle: ".portlet-header",
-            cancel: ".portlet-toggle",
-            placeholder: "portlet-placeholder ui-corner-all"
+        /*
+        (<any>$( ".column" )).sortable({
+          connectWith: ".column",
+          handle: ".portlet-header",
+          cancel: ".portlet-toggle",
+          placeholder: "portlet-placeholder ui-corner-all"
         });
-        jquery(".portlet")
+        */
+        $(".portlet")
             .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
             .find(".portlet-header")
             .addClass("ui-widget-header ui-corner-all")
             .prepend("<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-        jquery(".portlet-toggle").on("click", function () {
-            var icon = jquery(this);
+        $(".portlet-toggle").on("click", function () {
+            var icon = $(this);
             icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
             icon.closest(".portlet").find(".portlet-content").toggle();
         });
     };
     LoadPortletsComponent.prototype.loadFile = function (configFile) {
-        this.data = this.service.getScreen(/*'..'*/ /*+ environment.directory + */ configFile);
+        this.data = this.service.getScreen(configFile);
         this.data.subscribe(function (val) { return console.log(val); });
     };
     LoadPortletsComponent.ctorParameters = function () { return [
