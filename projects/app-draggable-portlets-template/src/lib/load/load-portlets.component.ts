@@ -14,7 +14,9 @@ import { Data } from '../data';
 
 'use strict';
 
-import $ from 'jquery';
+import * as $_ from 'jquery';
+
+const $ = $_;
 
 require('jquery-ui');
 require('jquery-ui/ui/widgets/sortable');
@@ -36,9 +38,21 @@ export class LoadPortletsComponent {
   //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private service: ReturnJsonArrayService) {
-    
+    //this.loadScript('app-draggable-portlets-template/assets/js/jquery-ui.min.js');
+    //this.loadScript('app-draggable-portlets-template//assets/js/sortable.js');
+    //this.loadScript('app-draggable-portlets-template//assets/js/disable-selection.js');
   }
-
+/*
+  loadScript(url) {
+    console.log("preparing to load...");
+    let node = document.createElement('script');
+    node.src = url;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.head.appendChild(node);
+  }
+*/
   ngOnInit() {
     console.log(this.configFile);
     if(this.configFile) {

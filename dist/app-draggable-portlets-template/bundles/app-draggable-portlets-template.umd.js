@@ -10623,6 +10623,12 @@
 	} );
 	});
 
+	var $_ = /*#__PURE__*/Object.freeze({
+		__proto__: null,
+		'default': jquery,
+		__moduleExports: jquery
+	});
+
 	var AppDraggablePortletsTemplateService = /** @class */ (function () {
 	    function AppDraggablePortletsTemplateService() {
 	    }
@@ -10733,6 +10739,7 @@
 	//const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
 	/* opcio nova */
 	'use strict';
+	var $ = $_;
 	require('jquery-ui');
 	require('jquery-ui/ui/widgets/sortable');
 	require('jquery-ui/ui/disable-selection');
@@ -10740,7 +10747,21 @@
 	    //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
 	    function LoadPortletsComponent(service) {
 	        this.service = service;
+	        //this.loadScript('app-draggable-portlets-template/assets/js/jquery-ui.min.js');
+	        //this.loadScript('app-draggable-portlets-template//assets/js/sortable.js');
+	        //this.loadScript('app-draggable-portlets-template//assets/js/disable-selection.js');
 	    }
+	    /*
+	      loadScript(url) {
+	        console.log("preparing to load...");
+	        let node = document.createElement('script');
+	        node.src = url;
+	        node.type = "text/javascript";
+	        node.async = true;
+	        node.charset = "utf-8";
+	        document.head.appendChild(node);
+	      }
+	    */
 	    LoadPortletsComponent.prototype.ngOnInit = function () {
 	        var _this = this;
 	        console.log(this.configFile);
@@ -10758,19 +10779,19 @@
 	                columnsCount = 1;
 	            }
 	            var width = ((1 / columnsCount) * 100);
-	            jquery(".column").width(width + "%");
+	            $(".column").width(width + "%");
 	        });
-	        jquery(".portlet")
+	        $(".portlet")
 	            .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 	            .find(".portlet-header")
 	            .addClass("ui-widget-header ui-corner-all")
 	            .prepend("<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-	        jquery(".portlet-toggle").on("click", function () {
-	            var icon = jquery(this);
+	        $(".portlet-toggle").on("click", function () {
+	            var icon = $(this);
 	            icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
 	            icon.closest(".portlet").find(".portlet-content").toggle();
 	        });
-	        jquery(".column").sortable({
+	        $(".column").sortable({
 	            connectWith: ".column",
 	            handle: ".portlet-header",
 	            cancel: ".portlet-toggle",

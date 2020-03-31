@@ -3,7 +3,7 @@ import { defineInjectable, Injectable, Component, Input, ViewEncapsulation, inje
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import $ from 'jquery';
+import * as $_ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 
 let AppDraggablePortletsTemplateService = class AppDraggablePortletsTemplateService {
@@ -112,6 +112,7 @@ ReturnJsonArrayService = __decorate([
 //const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
 /* opcio nova */
 'use strict';
+const $ = $_;
 require('jquery-ui');
 require('jquery-ui/ui/widgets/sortable');
 require('jquery-ui/ui/disable-selection');
@@ -119,7 +120,21 @@ let LoadPortletsComponent = class LoadPortletsComponent {
     //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
     constructor(service) {
         this.service = service;
+        //this.loadScript('app-draggable-portlets-template/assets/js/jquery-ui.min.js');
+        //this.loadScript('app-draggable-portlets-template//assets/js/sortable.js');
+        //this.loadScript('app-draggable-portlets-template//assets/js/disable-selection.js');
     }
+    /*
+      loadScript(url) {
+        console.log("preparing to load...");
+        let node = document.createElement('script');
+        node.src = url;
+        node.type = "text/javascript";
+        node.async = true;
+        node.charset = "utf-8";
+        document.head.appendChild(node);
+      }
+    */
     ngOnInit() {
         console.log(this.configFile);
         if (this.configFile) {
