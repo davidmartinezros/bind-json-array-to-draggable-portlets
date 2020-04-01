@@ -3,7 +3,7 @@ import { defineInjectable, Injectable, Component, Input, ViewEncapsulation, inje
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import * as $_ from 'jquery';
+import * as jQuery_ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 
 var AppDraggablePortletsTemplateService = /** @class */ (function () {
@@ -110,35 +110,30 @@ var ReturnJsonArrayService = /** @class */ (function () {
     return ReturnJsonArrayService;
 }());
 
-/*opcio antiga */
-//'use strict';
-//import * as jqueryProxy from 'jquery'
-//const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
-/* opcio nova */
-'use strict';
-var $ = $_;
+var jQuery = jQuery_;
 require('jquery-ui');
 require('jquery-ui/ui/widgets/sortable');
-require('jquery-ui/ui/disable-selection');
+//require('jquery-ui/ui/disable-selection');
+/* opcio mes nova */
+//declare var jQuery: any;
 var LoadPortletsComponent = /** @class */ (function () {
     //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
     function LoadPortletsComponent(service) {
         this.service = service;
-        //this.loadScript('app-draggable-portlets-template/assets/js/jquery-ui.min.js');
-        //this.loadScript('app-draggable-portlets-template//assets/js/sortable.js');
-        //this.loadScript('app-draggable-portlets-template//assets/js/disable-selection.js');
+        this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
+        this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
+        this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-sortable/0.9.13/jquery-sortable-min.js');
+        //this.loadScript('node_modules/app-draggable-portlets-template/assets/js/disable-selection.js');
     }
-    /*
-      loadScript(url) {
+    LoadPortletsComponent.prototype.loadScript = function (url) {
         console.log("preparing to load...");
-        let node = document.createElement('script');
+        var node = document.createElement('script');
         node.src = url;
         node.type = "text/javascript";
         node.async = true;
         node.charset = "utf-8";
         document.head.appendChild(node);
-      }
-    */
+    };
     LoadPortletsComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log(this.configFile);
@@ -156,19 +151,19 @@ var LoadPortletsComponent = /** @class */ (function () {
                 columnsCount = 1;
             }
             var width = ((1 / columnsCount) * 100);
-            $(".column").width(width + "%");
+            jQuery(".column").width(width + "%");
         });
-        $(".portlet")
+        jQuery(".portlet")
             .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
             .find(".portlet-header")
             .addClass("ui-widget-header ui-corner-all")
             .prepend("<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-        $(".portlet-toggle").on("click", function () {
-            var icon = $(this);
+        jQuery(".portlet-toggle").on("click", function () {
+            var icon = jQuery(this);
             icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
             icon.closest(".portlet").find(".portlet-content").toggle();
         });
-        $(".column").sortable({
+        jQuery(".column").sortable({
             connectWith: ".column",
             handle: ".portlet-header",
             cancel: ".portlet-toggle",

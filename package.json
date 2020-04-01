@@ -31,7 +31,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-component": "ng build AppDraggablePortletsTemplate && cp -r src/assets dist/app-draggable-portlets-template/assets",
+    "publish-component": "cd dist/app-draggable-portlets-template && npm publish && cd .. && cd .."
   },
   "private": true,
   "dependencies": {

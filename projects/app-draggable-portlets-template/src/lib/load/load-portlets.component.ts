@@ -12,15 +12,19 @@ import { Data } from '../data';
 
 /* opcio nova */
 
-'use strict';
+//'use strict';
 
-import * as $_ from 'jquery';
+import * as jQuery_ from 'jquery';
 
-const $ = $_;
+const jQuery = jQuery_;
 
 require('jquery-ui');
 require('jquery-ui/ui/widgets/sortable');
-require('jquery-ui/ui/disable-selection');
+//require('jquery-ui/ui/disable-selection');
+
+/* opcio mes nova */
+
+//declare var jQuery: any;
 
 @Component({
   selector: 'app-load-portlets',
@@ -38,11 +42,12 @@ export class LoadPortletsComponent {
   //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private service: ReturnJsonArrayService) {
-    //this.loadScript('app-draggable-portlets-template/assets/js/jquery-ui.min.js');
-    //this.loadScript('app-draggable-portlets-template//assets/js/sortable.js');
-    //this.loadScript('app-draggable-portlets-template//assets/js/disable-selection.js');
+    this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
+    this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
+    this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-sortable/0.9.13/jquery-sortable-min.js');
+    //this.loadScript('node_modules/app-draggable-portlets-template/assets/js/disable-selection.js');
   }
-/*
+
   loadScript(url) {
     console.log("preparing to load...");
     let node = document.createElement('script');
@@ -52,7 +57,7 @@ export class LoadPortletsComponent {
     node.charset = "utf-8";
     document.head.appendChild(node);
   }
-*/
+
   ngOnInit() {
     console.log(this.configFile);
     if(this.configFile) {
@@ -70,20 +75,20 @@ export class LoadPortletsComponent {
         columnsCount = 1;
       }
       let width = ((1/columnsCount)*100);
-      $( ".column" ).width(width + "%");
+      jQuery( ".column" ).width(width + "%");
     });
-    $( ".portlet" )
+    jQuery( ".portlet" )
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
         .addClass( "ui-widget-header ui-corner-all" )
         .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
         
-    $( ".portlet-toggle" ).on( "click", function() {
-      var icon = $( this );
+    jQuery( ".portlet-toggle" ).on( "click", function() {
+      var icon = jQuery( this );
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
-    (<any>$( ".column" )).sortable({
+    (<any>jQuery( ".column" )).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",
