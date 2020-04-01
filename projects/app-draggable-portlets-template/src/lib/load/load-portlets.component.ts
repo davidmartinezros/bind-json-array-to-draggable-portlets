@@ -14,9 +14,9 @@ import { Data } from '../data';
 
 //'use strict';
 
-import * as jQuery_ from 'jquery';
+import * as $_ from 'jquery';
 
-const jQuery = jQuery_;
+const $ = $_;
 
 require('jquery-ui');
 require('jquery-ui/ui/widgets/sortable');
@@ -75,20 +75,20 @@ export class LoadPortletsComponent {
         columnsCount = 1;
       }
       let width = ((1/columnsCount)*100);
-      jQuery( ".column" ).width(width + "%");
+      $( ".column" ).width(width + "%");
     });
-    jQuery( ".portlet" )
+    $( ".portlet" )
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
         .addClass( "ui-widget-header ui-corner-all" )
         .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
         
-    jQuery( ".portlet-toggle" ).on( "click", function() {
-      var icon = jQuery( this );
+    $( ".portlet-toggle" ).on( "click", function() {
+      var icon = $( this );
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
-    (<any>jQuery( ".column" )).sortable({
+    (<any>$( ".column" )).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",
