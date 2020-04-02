@@ -6,7 +6,6 @@ export declare class LoadPortletsComponent {
     data: Observable<Data>;
     configFile: String;
     constructor(service: ReturnJsonArrayService);
-    loadScript(url: any): void;
     ngOnInit(): void;
     loadJQuery(): void;
     loadFile(configFile: any): void;

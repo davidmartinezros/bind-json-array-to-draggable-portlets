@@ -315,20 +315,22 @@
         //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
         function LoadPortletsComponent(service) {
             this.service = service;
-            this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
-            this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
-            this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-sortable/0.9.13/jquery-sortable-min.js');
+            //this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
+            //this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
+            //this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-sortable/0.9.13/jquery-sortable-min.js');
             //this.loadScript('node_modules/app-draggable-portlets-template/assets/js/disable-selection.js');
         }
-        LoadPortletsComponent.prototype.loadScript = function (url) {
+        /*
+          loadScript(url) {
             console.log("preparing to load...");
-            var node = document.createElement('script');
+            let node = document.createElement('script');
             node.src = url;
             node.type = "text/javascript";
             node.async = true;
             node.charset = "utf-8";
             document.head.appendChild(node);
-        };
+          }
+        */
         LoadPortletsComponent.prototype.ngOnInit = function () {
             var _this = this;
             console.log(this.configFile);

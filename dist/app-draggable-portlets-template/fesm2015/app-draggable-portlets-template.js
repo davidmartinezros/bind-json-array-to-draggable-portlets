@@ -116,12 +116,13 @@ let LoadPortletsComponent = class LoadPortletsComponent {
     //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
     constructor(service) {
         this.service = service;
-        this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
-        this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
-        this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-sortable/0.9.13/jquery-sortable-min.js');
+        //this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js');
+        //this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
+        //this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-sortable/0.9.13/jquery-sortable-min.js');
         //this.loadScript('node_modules/app-draggable-portlets-template/assets/js/disable-selection.js');
     }
-    loadScript(url) {
+    /*
+      loadScript(url) {
         console.log("preparing to load...");
         let node = document.createElement('script');
         node.src = url;
@@ -129,7 +130,8 @@ let LoadPortletsComponent = class LoadPortletsComponent {
         node.async = true;
         node.charset = "utf-8";
         document.head.appendChild(node);
-    }
+      }
+    */
     ngOnInit() {
         console.log(this.configFile);
         if (this.configFile) {
