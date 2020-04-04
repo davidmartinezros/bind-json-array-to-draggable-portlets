@@ -14,17 +14,17 @@ import { Data } from '../data';
 
 //'use strict';
 
-import * as $_ from 'jquery';
+//import * as $_ from 'jquery';
 
-const $ = $_;
+//const $ = $_;
 
-require('jquery-ui');
-require('jquery-ui/ui/widgets/sortable');
+//require('jquery-ui');
+//require('jquery-ui/ui/widgets/sortable');
 //require('jquery-ui/ui/disable-selection');
 
 /* opcio mes nova */
 
-//declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-load-portlets',
@@ -88,7 +88,7 @@ export class LoadPortletsComponent {
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
-    (<any>$( ".column" )).sortable({
+    $( ".column" ).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",
