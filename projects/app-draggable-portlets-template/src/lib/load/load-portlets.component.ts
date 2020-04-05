@@ -24,7 +24,19 @@ import { Data } from '../data';
 
 /* opcio mes nova */
 
-declare var $: any;
+//declare var $: any;
+
+//require('jquery-ui');
+//require('jquery-ui/ui/widgets/sortable');
+
+/* ultima opcio */
+
+import * as $ from 'jquery';
+
+require('jquery-ui');
+require('jquery-ui/ui/widgets/sortable');
+
+const $_ = $;
 
 @Component({
   selector: 'app-load-portlets',
@@ -75,20 +87,20 @@ export class LoadPortletsComponent {
         columnsCount = 1;
       }
       let width = ((1/columnsCount)*100);
-      $( ".column" ).width(width + "%");
+      $_( ".column" ).width(width + "%");
     });
-    $( ".portlet" )
+    $_( ".portlet" )
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
         .addClass( "ui-widget-header ui-corner-all" )
         .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
         
-    $( ".portlet-toggle" ).on( "click", function() {
-      var icon = $( this );
+    $_( ".portlet-toggle" ).on( "click", function() {
+      var icon = $_( this );
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
-    $( ".column" ).sortable({
+    (<any>$_( ".column" )).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",

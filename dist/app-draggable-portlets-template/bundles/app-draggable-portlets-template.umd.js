@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('rxjs'), require('@angular/common/http'), require('rxjs/operators'), require('jquery'), require('@angular/platform-browser')) :
     typeof define === 'function' && define.amd ? define('app-draggable-portlets-template', ['exports', '@angular/core', 'rxjs', '@angular/common/http', 'rxjs/operators', 'jquery', '@angular/platform-browser'], factory) :
     (global = global || self, factory(global['app-draggable-portlets-template'] = {}, global.ng.core, global.rxjs, global.ng.common.http, global.rxjs.operators, global.jqueryProxy__default, global.ng.platformBrowser));
-}(this, (function (exports, core, rxjs, http, operators, $_, platformBrowser) { 'use strict';
+}(this, (function (exports, core, rxjs, http, operators, $, platformBrowser) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -305,12 +305,9 @@
         return ReturnJsonArrayService;
     }());
 
-    var $ = $_;
     require('jquery-ui');
     require('jquery-ui/ui/widgets/sortable');
-    //require('jquery-ui/ui/disable-selection');
-    /* opcio mes nova */
-    //declare var jQuery: any;
+    var $_ = $;
     var LoadPortletsComponent = /** @class */ (function () {
         //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
         function LoadPortletsComponent(service) {
@@ -348,19 +345,19 @@
                     columnsCount = 1;
                 }
                 var width = ((1 / columnsCount) * 100);
-                $(".column").width(width + "%");
+                $_(".column").width(width + "%");
             });
-            $(".portlet")
+            $_(".portlet")
                 .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
                 .find(".portlet-header")
                 .addClass("ui-widget-header ui-corner-all")
                 .prepend("<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-            $(".portlet-toggle").on("click", function () {
-                var icon = $(this);
+            $_(".portlet-toggle").on("click", function () {
+                var icon = $_(this);
                 icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
                 icon.closest(".portlet").find(".portlet-content").toggle();
             });
-            $(".column").sortable({
+            $_(".column").sortable({
                 connectWith: ".column",
                 handle: ".portlet-header",
                 cancel: ".portlet-toggle",

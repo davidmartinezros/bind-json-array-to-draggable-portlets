@@ -3,7 +3,7 @@ import { defineInjectable, Injectable, Component, Input, ViewEncapsulation, inje
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import * as $_ from 'jquery';
+import * as $ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 
 let AppDraggablePortletsTemplateService = class AppDraggablePortletsTemplateService {
@@ -106,12 +106,9 @@ ReturnJsonArrayService = __decorate([
     __metadata("design:paramtypes", [HttpClient])
 ], ReturnJsonArrayService);
 
-const $ = $_;
 require('jquery-ui');
 require('jquery-ui/ui/widgets/sortable');
-//require('jquery-ui/ui/disable-selection');
-/* opcio mes nova */
-//declare var jQuery: any;
+const $_ = $;
 let LoadPortletsComponent = class LoadPortletsComponent {
     //@Output() notify: EventEmitter<any> = new EventEmitter<any>();
     constructor(service) {
@@ -148,19 +145,19 @@ let LoadPortletsComponent = class LoadPortletsComponent {
                 columnsCount = 1;
             }
             let width = ((1 / columnsCount) * 100);
-            $(".column").width(width + "%");
+            $_(".column").width(width + "%");
         });
-        $(".portlet")
+        $_(".portlet")
             .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
             .find(".portlet-header")
             .addClass("ui-widget-header ui-corner-all")
             .prepend("<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-        $(".portlet-toggle").on("click", function () {
-            var icon = $(this);
+        $_(".portlet-toggle").on("click", function () {
+            var icon = $_(this);
             icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
             icon.closest(".portlet").find(".portlet-content").toggle();
         });
-        $(".column").sortable({
+        $_(".column").sortable({
             connectWith: ".column",
             handle: ".portlet-header",
             cancel: ".portlet-toggle",
